@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EduQuest - Phase 0</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>EduQuest - Gamified Learning</h1>
+  <h2 id="welcome"></h2>
+
+  <!-- Quiz Area -->
+  <div id="quiz-area">
+    <h2 id="lesson-title">Motion & Force Quiz</h2>
+    <div id="question"></div>
+    <div id="options"></div>
+    <button onclick="nextQuestion()">Next</button>
+  </div>
+
+  <!-- XP & Level -->
+  <div id="progress">
+    <p>XP: <span id="xp">0</span> | Level: <span id="level">1</span></p>
+  </div>
+
+  <!-- Result -->
+  <div id="result"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
