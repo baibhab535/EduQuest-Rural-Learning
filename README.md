@@ -1,23 +1,54 @@
-# EduQuest-Rural-Learning
-Gamified Learning Platform for Rural Schools (Grades 6–12)
-# EduQuest - Gamified Learning Platform
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EduQuest - Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>EduQuest</h1>
+  <h2>Student Registration</h2>
 
-**Problem Statement ID**: 25048  
-**Organization**: Government of Odisha  
-**Department**: Electronics & IT Department  
-**Theme**: Smart Education  
+  <form id="registerForm">
+    <label for="name">Student Name:</label><br>
+    <input type="text" id="name" required><br><br>
 
-## Vision
-A gamified offline-first platform to improve STEM learning for rural school students (Grades 6–12).  
-Built with focus on:
-- **Offline availability** (PWA + local caching)
-- **Gamification** (XP, levels, badges)
-- **Teacher dashboard** for tracking progress
-- **Simple, local-language UI**
+    <label for="class">Class:</label><br>
+    <select id="class" required>
+      <option value="">--Select--</option>
+      <option value="6">Class 6</option>
+      <option value="7">Class 7</option>
+      <option value="8">Class 8</option>
+      <option value="9">Class 9</option>
+      <option value="10">Class 10</option>
+      <option value="11">Class 11</option>
+      <option value="12">Class 12</option>
+    </select><br><br>
 
-## Pilot Scope (Phase 0)
-- Subject: Grade 8 Science (Physics – Motion & Force)
-- 1 Lesson (concept explanation with visuals)
-- 1 Quiz (5 questions, multiple-choice)
-- Simple gamification (XP per correct answer)
+    <button type="submit">Register</button>
+  </form>
 
+  <script>
+    // Auto-redirect if already registered
+    if (localStorage.getItem("student")) {
+      window.location.href = "index.html";
+    }
+
+    document.getElementById("registerForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      let student = {
+        name: document.getElementById("name").value,
+        class: document.getElementById("class").value,
+        xp: 0,
+        level: 1
+      };
+
+      localStorage.setItem("student", JSON.stringify(student));
+
+      alert("✅ Registration successful! Welcome " + student.name);
+      window.location.href = "index.html"; // go to main app
+    });
+  </script>
+</body>
+</html>
