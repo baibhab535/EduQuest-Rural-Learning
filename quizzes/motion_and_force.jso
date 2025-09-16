@@ -1,0 +1,30 @@
+{
+  "title": "Quiz - Motion & Force",
+  "questions": [
+    {
+      "q": "Which law is known as the law of inertia?",
+      "options": ["Newton’s First Law", "Newton’s Second Law", "Newton’s Third Law"],
+      "answer": 0
+    },
+    {
+      "q": "Force is equal to?",
+      "options": ["m + a", "m / a", "m × a"],
+      "answer": 2
+    },
+    {
+      "q": "Every action has an equal and opposite reaction. This is?",
+      "options": ["First Law", "Second Law", "Third Law"],
+      "answer": 2
+    },
+    {
+      "q": "What is the SI unit of force?",
+      "options": ["Newton", "Joule", "Pascal"],
+      "answer": 0
+    },
+    {
+      "q": "Which of these is an example of force?",
+      "options": ["Light", "Heat", "Push"],
+      "answer": 2
+    }
+  ]
+}
