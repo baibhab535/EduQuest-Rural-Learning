@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EduQuest - Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>EduQuest</h1>
+  <h2>Student Registration</h2>
+
+  <form id="registerForm">
+    <label for="name">Student Name:</label><br>
+    <input type="text" id="name" required><br><br>
+
+    <label for="class">Class:</label><br>
+    <select id="class" required>
+      <option value="">--Select--</option>
+      <option value="6">Class 6</option>
+      <option value="7">Class 7</option>
+      <option value="8">Class 8</option>
+      <option value="9">Class 9</option>
+      <option value="10">Class 10</option>
+      <option value="11">Class 11</option>
+      <option value="12">Class 12</option>
+    </select><br><br>
+
+    <button type="submit">Register</button>
+  </form>
+
+  <script>
+    // Auto-redirect if already registered
+    if (localStorage.getItem("student")) {
+      window.location.href = "index.html";
+    }
+
+    document.getElementById("registerForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      let student = {
+        name: document.getElementById("name").value,
+        class: document.getElementById("class").value,
+        xp: 0,
+        level: 1
+      };
+
+      localStorage.setItem("student", JSON.stringify(student));
+
+      alert("✅ Registration successful! Welcome " + student.name);
+      window.location.href = "index.html"; // go to main app
+    });
+  </script>
+</body>
+</html>
